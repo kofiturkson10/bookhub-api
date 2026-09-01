@@ -1,6 +1,36 @@
-@host = http://localhost:5284
+@host = https://localhost:7000
 
-GET {{host}}//
+### 1. Lägg till en bok.
+POST {{host}}/api/books
+Content-Type: application/json
+
+{
+  "title": "Sagan om ringen",
+  "author": "J.R.R. Tolkien",
+  "publishedDate": "1954-07-29"
+}
+
+
+### 2. Hämta alla böcker.
+GET {{host}}/api/books
 Accept: application/json
 
-###
+
+### 3. Hämta en bok.
+GET {{host}}/api/books/2
+Accept: application/json
+
+
+### 4. Uppdatera en bok.
+PUT {{host}}/api/books/2
+Content-Type: application/json
+
+{
+  "title": "Sagan om ringen (rev)",
+  "author": "J.R.R. Tolkien",
+  "publishedDate": "1954-07-29"
+}
+
+
+### 5. Radera en bok.
+DELETE {{host}}/api/books/2
