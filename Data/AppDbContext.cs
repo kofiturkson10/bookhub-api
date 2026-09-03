@@ -1,4 +1,5 @@
 ﻿using bookhub_api.Models;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 
 namespace bookhub_api.Data;
@@ -13,6 +14,8 @@ public class AppDbContext : DbContext
     public DbSet<Book> Books => Set<Book>();
 
     public DbSet<User> Users => Set<User>();
+
+    public DbSet<Quote> Quotes => Set<Quote>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

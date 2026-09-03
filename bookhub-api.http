@@ -1,5 +1,5 @@
 @host = https://localhost:7000
-
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJrb2ZpIiwianRpIjoiNmRiODBiZjYtM2M3NC00ZThkLThjMmUtNzEwODM5OGZjZWVmIiwiZXhwIjoxNzg4NDc1ODQwLCJpc3MiOiJib29raHViLWFwaSIsImF1ZCI6ImJvb2todWItY2xpZW50In0.0Eaqq6LcKmzItrbMZKODaIPFWLks-zf9kurNhioEGS0
 ### 1. Lägg till en bok.
 POST {{host}}/api/books
 Content-Type: application/json
@@ -58,5 +58,31 @@ GET {{host}}/api/books
 
 ### 9. Books med giltig token → förväntar 200 OK
 GET {{host}}/api/books
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJrb2ZpIiwianRpIjoiYzc1M2U3MjktZWYxNS00ZGM1LWFjNGEtZDZiNWJkMjRiYWM1IiwiZXhwIjoxNzg4MjkwOTQ5LCJpc3MiOiJib29raHViLWFwaSIsImF1ZCI6ImJvb2todWItY2xpZW50In0.cq4zn1SiNLvY6lVV1pXM1nwyF1_M3m-u-GYtkpBlA6A
- 
+Authorization: Bearer {{token}}
+
+### 10. Hämta alla citat. 
+GET {{host}}/api/quotes
+Authorization: Bearer {{token}}
+
+### 11. Lägg till ett citat. 
+POST {{host}}/api/quotes
+Content-Type: application/json
+Authorization: Bearer {{token}}
+{
+  "text": "Stay hungry, stay foolish",
+  "author": "Steve Jobs"
+}
+
+### 12. Uppdatera ett citat
+PUT {{host}}/api/quotes/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "text": "Stay hungry, stay foolish. Uppdaterad.",
+  "author": "Steve Jobs"
+}
+
+### 13. Radera ett citat
+DELETE {{host}}/api/quotes/1
+Authorization: Bearer {{token}}
