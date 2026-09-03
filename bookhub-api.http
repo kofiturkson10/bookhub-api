@@ -34,3 +34,29 @@ Content-Type: application/json
 
 ### 5. Radera en bok.
 DELETE {{host}}/api/books/2
+
+### 6. Registrera en användare
+POST {{host}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "kofi",
+  "password": "test1234"
+}
+
+### 7. Logga in.
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "kofi",
+  "password": "test1234"
+}
+
+### 8. Books utan token → förväntar 401 Unauthorized
+GET {{host}}/api/books
+
+### 9. Books med giltig token → förväntar 200 OK
+GET {{host}}/api/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJrb2ZpIiwianRpIjoiYzc1M2U3MjktZWYxNS00ZGM1LWFjNGEtZDZiNWJkMjRiYWM1IiwiZXhwIjoxNzg4MjkwOTQ5LCJpc3MiOiJib29raHViLWFwaSIsImF1ZCI6ImJvb2todWItY2xpZW50In0.cq4zn1SiNLvY6lVV1pXM1nwyF1_M3m-u-GYtkpBlA6A
+ 

@@ -5,3 +5,11 @@ public record BookResponse(int id, string Title, string Author, DateOnly Publish
 public record CreateBookRequest(string Title, string Author, DateOnly PublishedDate);
 
 public record UpdateBookRequest(string Title, string Author, DateOnly PublishedDate);
+
+public record RegisterRequest(string Username, string Password);
+
+public record UserResponse(int id, string Username);
+
+public record LoginRequest(string Username, string Password);
+
+public record TokenResponse(string Token);
