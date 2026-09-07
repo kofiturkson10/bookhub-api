@@ -1,4 +1,5 @@
-[bookhub API – README-svenska.md](https://github.com/user-attachments/files/31904595/bookhub.API.README-svenska.md)[bookhub-api-README.md](https://github.com/user-attachments/files/31904395/bookhub-api-README.md)
+[bookhub-api-README-svenska.md](https://github.com/user-attachments/files/31905195/bookhub-api-README-svenska.md)
+[bookhub-api-README.md](https://github.com/user-attachments/files/31904395/bookhub-api-README.md)
 # BookHub API
 
 Backend-delen för **BookHub**, en fullstack CRUD-applikation som byggts som ett LIA-projekt (lärande i arbete) med fokus på molnutveckling. Detta repository innehåller .NET 9 Web API:t som tillhandahåller data för böcker och citat samt hanterar JWT-baserad autentisering.
