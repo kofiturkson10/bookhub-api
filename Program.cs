@@ -40,7 +40,9 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy(AngularCors, policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
+        policy.WithOrigins(
+            "http://localhost:4200",
+            "https://wonderful-island-02ad5290f.7.azurestaticapps.net")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
